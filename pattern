@@ -1,0 +1,60 @@
+			*
+		*		*
+	*				*
+*						*
+	*				*
+		*		*
+			*
+
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+
+        if (a < 3) {
+            System.out.println("Please enter an odd number greater than or equal to 3.");
+            return;
+        }
+
+        int os = a / 2;  // Outer spaces
+        int is = -1;     // Inner spaces
+
+        for (int i = 1; i <= a; i++) {
+            // Print outer spaces
+            for (int j = 1; j <= os; j++) {
+                System.out.print("\t");
+            }
+
+            // Print the first '*'
+            System.out.print("*");
+
+            // Print inner spaces
+            for (int j = 1; j <= is; j++) {
+                System.out.print("\t");
+            }
+
+            // Print the second '*' if not the first or last row
+            if (i > 1 && i < a) {
+                System.out.print("\t*");
+            }
+
+            // Adjust outer and inner spaces for next row
+            if (i <= a / 2) {
+                os--;       // Decrease outer spaces
+                is += 2;    // Increase inner spaces
+            } else {
+                os++;       // Increase outer spaces
+                is -= 2;    // Decrease inner spaces
+            }
+
+            // Move to the next line
+            System.out.println();
+        }
+
+        s.close();
+    }
+}
