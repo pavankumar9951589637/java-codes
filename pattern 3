@@ -1,0 +1,40 @@
+1						1	
+1	2				2	1	
+1	2	3		3	2	1	
+1	2	3	4	3	2	1	
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+    int a=s.nextInt();
+        int sp=a*2-1;
+        int b=sp-2;
+        int st=1;
+        int val=1;
+        for(int i=1;i<=a;i++){
+            int c=val;
+            for(int j=1;j<=st;j++) {
+                System.out.print(c+"\t");
+                c++;
+            }
+            for(int j=1;j<=b;j++){
+                System.out.print("\t");
+            }
+            if(i==a){
+                c--;
+                st--;
+            }
+            for(int j=1;j<=st;j++) {
+                c--;
+                System.out.print(c+"\t");
+            }
+            b-=2;
+            st++;
+            System.out.println();
+
+        }
+}
+}
+
