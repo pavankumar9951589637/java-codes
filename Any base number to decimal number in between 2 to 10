@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        int a=s.nextInt();
+        System.out.println("Enter the numbers base: ");
+        int b=s.nextInt();
+        int c=0;
+        int power=0;
+        while (a!=0){
+            c+=(a%10)*(int)Math.pow(b,power);
+            power++;
+            a/=10;
+        }
+        System.out.println(c);
+    }
+}
