@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the decimal number: ");
+        int a=s.nextInt();
+        System.out.println("Enter the number to which you want to convert: ");
+        int b=s.nextInt();
+        int c=0;
+        int power=0;
+        while(a!=0){
+            c=c+(a%b)*(int)Math.pow(10,power);
+            power++;
+            a/=b;
+
+        }
+        System.out.println(c);
+    }
+}
